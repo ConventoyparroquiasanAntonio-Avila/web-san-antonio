@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────
+#  CONFIGURACIÓN GENERAL DE LA WEB
+#  Cambia aquí los datos de la parroquia.
+# ─────────────────────────────────────────────
+
+title: "Parroquia de San Antonio"          # ← CONFIRMAR nombre
+lema: "Paz y Bien"
+description: "Parroquia atendida por los Hermanos Menores Franciscanos. Horarios de misa, hoja parroquial, grupos y actualidad."
+
+# Contacto
+direccion: "Calle Ejemplo, 1, 00000 Ciudad"   # ← CAMBIAR
+telefono: "000 000 000"                          # ← CAMBIAR
+email: "parroquia@ejemplo.es"                    # ← CAMBIAR
+
+# Redes
+x_usuario: "usuario_parroquia"   # ← cuenta de X sin la @
+x_timeline: true                 # intenta mostrar las publicaciones en la página Actualidad
+
+# Hoja parroquial: ID de la carpeta de Google Drive (ver README)
+drive_carpeta_id: ""             # ← PEGAR aquí el ID de la carpeta
+
+# Si publicas en usuario.github.io/NOMBRE-REPO, pon baseurl: "/NOMBRE-REPO"
+# Si usas dominio propio, déjalo vacío.
+baseurl: ""
+url: ""
+
+# Idioma y fechas
+lang: es
+timezone: Europe/Madrid
+meses: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+
+permalink: /actualidad/:year/:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+exclude: [README.md]

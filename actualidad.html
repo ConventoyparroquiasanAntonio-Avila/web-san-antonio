@@ -1,0 +1,19 @@
+---
+layout: pagina
+title: Actualidad
+permalink: /actualidad/
+entradilla: Noticias de la parroquia y avisos del día.
+---
+<div class="actualidad">
+  <div class="notas notas--lista">
+    {% for post in site.posts %}{% include noticia-lista.html %}{% else %}<p>Todavía no hay noticias publicadas.</p>{% endfor %}
+  </div>
+  <aside class="x-panel">
+    <h2>En X</h2>
+    <p>Lo más inmediato lo publicamos en <a href="https://x.com/{{ site.x_usuario }}">@{{ site.x_usuario }}</a>.</p>
+    {% if site.x_timeline %}
+    <a class="twitter-timeline" data-lang="es" data-height="600" data-chrome="noheader nofooter" href="https://twitter.com/{{ site.x_usuario }}">Ver las publicaciones de @{{ site.x_usuario }}</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    {% endif %}
+  </aside>
+</div>

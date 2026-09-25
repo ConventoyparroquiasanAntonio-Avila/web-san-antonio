@@ -1,0 +1,20 @@
+---
+layout: pagina
+title: Grupos
+permalink: /grupos/
+entradilla: Cada grupo es una puerta de entrada a la vida de la parroquia. Si te interesa alguno, pregunta en el despacho o escríbenos.
+imagen: /assets/img/francisco-cantando.jpg
+imagen_alt: San Francisco cantando junto a una pequeña iglesia
+---
+<ul class="grupos">
+  {% for g in site.data.grupos %}
+  <li class="grupo">
+    <h2>{% if g.enlace %}<a href="{{ g.enlace | relative_url }}">{{ g.nombre }}</a>{% else %}{{ g.nombre }}{% endif %}</h2>
+    <p>{{ g.descripcion }}</p>
+    {% if g.cuando or g.contacto %}
+    <p class="grupo__datos">{% if g.cuando %}<span>{{ g.cuando }}</span>{% endif %}{% if g.contacto %}<span>{{ g.contacto }}</span>{% endif %}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+<p class="grupos-pie">¿Quieres empezar un grupo nuevo o echar una mano? <a href="{{ '/contacto/' | relative_url }}">Cuéntanoslo</a>.</p>

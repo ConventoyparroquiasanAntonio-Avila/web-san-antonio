@@ -1,0 +1,19 @@
+---
+layout: pagina
+title: Contacto
+permalink: /contacto/
+entradilla: Estamos para lo que necesites.
+---
+<div class="contacto">
+  <section>
+    <h2>Dirección</h2>
+    <p>{{ site.direccion }}</p>
+    <p><a class="boton boton--claro" href="https://www.google.com/maps/search/?api=1&query={{ site.direccion | url_encode }}">Abrir en el mapa</a></p>
+  </section>
+  <section>
+    <h2>Despacho parroquial</h2>
+    <p>{{ site.data.horarios.despacho.dias }}, de {{ site.data.horarios.despacho.horas }}.</p>
+    <p>Teléfono: <a href="tel:{{ site.telefono | remove: ' ' }}">{{ site.telefono }}</a><br>
+    Correo: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </section>
+</div>

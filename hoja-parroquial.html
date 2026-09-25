@@ -1,0 +1,17 @@
+---
+layout: pagina
+title: Hoja parroquial
+permalink: /hoja-parroquial/
+entradilla: Lecturas, avisos y agenda de cada semana. La más reciente aparece arriba.
+---
+{% if site.drive_carpeta_id != "" %}
+<div class="hoja">
+  <iframe src="https://drive.google.com/embeddedfolderview?id={{ site.drive_carpeta_id }}#list" title="Hojas parroquiales" loading="lazy"></iframe>
+</div>
+<p><a class="boton boton--claro" href="https://drive.google.com/drive/folders/{{ site.drive_carpeta_id }}">Abrir la carpeta completa</a></p>
+{% else %}
+<div class="vacio">
+  <p>Aquí aparecerán las hojas parroquiales en cuanto se conecte la carpeta de Google Drive.</p>
+  <p>Para conectarla, copia el ID de la carpeta en <code>drive_carpeta_id</code>, dentro de <code>_config.yml</code>.</p>
+</div>
+{% endif %}

@@ -1,0 +1,42 @@
+---
+layout: pagina
+title: Horarios
+permalink: /horarios/
+entradilla: Misas, confesiones y atención en el despacho.
+imagen: /assets/img/altar-virgen.jpg
+imagen_alt: Retablo dorado del altar mayor con la imagen de la Virgen
+---
+{% assign h = site.data.horarios %}
+<div class="temporadas">
+  {% assign temporadas = "invierno,verano" | split: "," %}
+  {% for t in temporadas %}
+  {% assign temp = h[t] %}
+  <section class="temporada" data-temporada="{{ t }}">
+    <h2>{{ temp.nombre }}</h2>
+    <p class="temporada__periodo">{{ temp.periodo }}<span class="temporada__vigente"> (vigente)</span></p>
+    <dl class="misas">
+      {% for m in temp.misas %}
+      <div><dt>{{ m.etiqueta }}</dt><dd>{% for hora in m.horas %}<span class="hora">{{ hora }}</span>{% endfor %}</dd></div>
+      {% endfor %}
+    </dl>
+  </section>
+  {% endfor %}
+</div>
+
+<div class="avisos">
+  <section>
+    <h2>Apertura del templo y confesiones</h2>
+    <p>{{ h.apertura }}</p>
+    <p>{{ h.confesiones }}</p>
+  </section>
+  <section>
+    <h2>Despacho parroquial</h2>
+    <p>{{ h.despacho.dias }}, de {{ h.despacho.horas }}.</p>
+    <p>Para bautizos, bodas, certificados y cualquier gestión.</p>
+  </section>
+  <section>
+    <h2>Cáritas</h2>
+    <p>{{ h.caritas.dias }} a las {{ h.caritas.horas }}.</p>
+  </section>
+</div>
+<script>window.HORARIOS = {{ site.data.horarios | jsonify }};</script>
