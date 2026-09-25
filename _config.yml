@@ -21,7 +21,7 @@ drive_carpeta_id: ""             # ← PEGAR aquí el ID de la carpeta
 
 # Si publicas en usuario.github.io/NOMBRE-REPO, pon baseurl: "/NOMBRE-REPO"
 # Si usas dominio propio, déjalo vacío.
-baseurl: ""
+baseurl: "web-san-antonio"
 url: ""
 
 # Idioma y fechas
