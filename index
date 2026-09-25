@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<section class="entrada">
+  <div class="contenedor entrada__rejilla">
+    <div class="entrada__texto">
+      <p class="entrada__lema">{{ site.lema }}</p>
+      <h1>{{ site.title }}</h1>
+      <p class="entrada__intro">Una comunidad cristiana acompañada por los hermanos franciscanos. Aquí tienes los horarios, la hoja de cada semana y todo lo que se mueve en la parroquia.</p>
+      {% include hoy.html %}
+    </div>
+    <figure class="entrada__imagen">
+      <img src="{{ '/assets/img/fachada.jpg' | relative_url }}" alt="Fachada de la iglesia pintada al óleo, con su cúpula y espadaña bajo un cielo malva" width="928" height="1145">
+    </figure>
+  </div>
+</section>
+
+<section class="bloque bloque--cielo">
+  <div class="contenedor dos-columnas">
+    <div>
+      <h2>Hoja parroquial</h2>
+      <p>Cada domingo publicamos la hoja con las lecturas, los avisos y la agenda de la semana.</p>
+      <p><a class="boton" href="{{ '/hoja-parroquial/' | relative_url }}">Leer la hoja de esta semana</a></p>
+    </div>
+    <div>
+      <h2>Actualidad al momento</h2>
+      <p>Los avisos del día, las fotos de las celebraciones y cualquier cambio de última hora los contamos en X.</p>
+      <p><a class="boton boton--claro" href="https://x.com/{{ site.x_usuario }}">Seguir a @{{ site.x_usuario }}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="contenedor">
+    <div class="bloque__cabeza">
+      <h2>Noticias</h2>
+      <a href="{{ '/actualidad/' | relative_url }}">Ver todas las noticias</a>
+    </div>
+    <div class="notas">
+      {% for post in site.posts limit:3 %}{% include noticia-lista.html %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bloque bloque--grupos">
+  <div class="contenedor grupos-intro">
+    <img src="{{ '/assets/img/francisco-cantando.jpg' | relative_url }}" alt="San Francisco cantando junto a una pequeña iglesia, rodeado de pájaros" loading="lazy">
+    <div>
+      <h2>Grupos de la parroquia</h2>
+      <p>Hay un lugar para cada edad y cada inquietud: catequesis, jóvenes, caridad, liturgia, fraternidad seglar.</p>
+      <ul class="grupos-nombres">
+        {% for g in site.data.grupos %}<li>{{ g.nombre }}</li>{% endfor %}
+      </ul>
+      <p><a class="boton" href="{{ '/grupos/' | relative_url }}">Conocer los grupos</a></p>
+    </div>
+  </div>
+</section>
